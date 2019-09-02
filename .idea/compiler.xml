@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="loglinkdubbo" />
+        <module name="loglinkcore" />
+        <module name="example" />
+        <module name="loglink-spring-web" />
+        <module name="com.aykj.loglink-rocketmq" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="loglinkrocketmq" target="1.8" />
+      <module name="loglinkspringweb" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
