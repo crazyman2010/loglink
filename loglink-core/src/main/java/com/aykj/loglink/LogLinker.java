@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 
 public class LogLinker {
-    private static ConcurrentHashMap<Long, String> requestIdMap = new ConcurrentHashMap<>();
+    private final static ConcurrentHashMap<Long, String> requestIdMap = new ConcurrentHashMap<>();
 
     /**
      * 获取当前线程请求id
