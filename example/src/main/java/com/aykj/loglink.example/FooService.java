@@ -29,4 +29,10 @@ public class FooService implements SmartLifecycle {
     public boolean isRunning() {
         return false;
     }
+
+
+    public String echo(String s){
+        log.info("echo {}", s);
+        return s;
+    }
 }

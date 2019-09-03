@@ -14,6 +14,10 @@ import java.util.List;
 
 public class RequestIdLogEventFactory extends ReusableLogEventFactory {
 
+    public static String getRequestId(LogEvent event) {
+        return event.getContextData().getValue("RequestId");
+    }
+
     /**
      * Creates a log event.
      *
@@ -34,16 +38,29 @@ public class RequestIdLogEventFactory extends ReusableLogEventFactory {
         return event;
     }
 
-    private void addRequestIdToEvent(LogEvent event){
+    private void addRequestIdToEvent(LogEvent event) {
         if (event instanceof MutableLogEvent) {
             StringMap contextData = ContextDataFactory.createContextData();
             contextData.putAll(event.getContextData());
-            contextData.putValue("RequestId", LogLinker.getRequestId());
+            try {
+                System.out.println("class loader1:"+getClassLoader());
+                getClassLoader().loadClass("com.aykj.loglink.LogLinker");
+                contextData.putValue("RequestId", LogLinker.getRequestId());
+                System.out.println("class loader: "+LogLinker.class.getClassLoader());
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
             ((MutableLogEvent) event).setContextData(contextData);
         }
     }
 
-    public static String getRequestId(LogEvent event) {
-        return event.getContextData().getValue("RequestId");
+    private ClassLoader getClassLoader() {
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        if (classLoader != null) {
+            return classLoader;
+        }
+        return this.getClassLoader();
     }
+
+
 }

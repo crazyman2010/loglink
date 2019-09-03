@@ -7,11 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="loglinkdubbo" />
-        <module name="loglinkcore" />
-        <module name="example" />
-        <module name="loglink-spring-web" />
+        <module name="com.aykj.loglink-dubbo" />
         <module name="com.aykj.loglink-rocketmq" />
+        <module name="example" />
+        <module name="loglink-core" />
+        <module name="loglink-spring-web" />
+        <module name="loglinkcore" />
+        <module name="loglinkdubbo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
