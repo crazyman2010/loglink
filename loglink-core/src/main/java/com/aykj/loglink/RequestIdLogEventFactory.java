@@ -42,14 +42,14 @@ public class RequestIdLogEventFactory extends ReusableLogEventFactory {
         if (event instanceof MutableLogEvent) {
             StringMap contextData = ContextDataFactory.createContextData();
             contextData.putAll(event.getContextData());
-            try {
-                System.out.println("class loader1:"+getClassLoader());
-                getClassLoader().loadClass("com.aykj.loglink.LogLinker");
+//            try {
+//                System.out.println("class loader1:"+getClassLoader());
+//                getClassLoader().loadClass("com.aykj.loglink.LogLinker");
                 contextData.putValue("RequestId", LogLinker.getRequestId());
-                System.out.println("class loader: "+LogLinker.class.getClassLoader());
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+//                System.out.println("class loader: "+LogLinker.class.getClassLoader());
+//            } catch (ClassNotFoundException e) {
+//                e.printStackTrace();
+//            }
             ((MutableLogEvent) event).setContextData(contextData);
         }
     }

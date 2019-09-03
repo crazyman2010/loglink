@@ -21,12 +21,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.aykj</groupId>
-            <artifactId>loglink-spring-web</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>2.1.7.RELEASE</version>
@@ -57,11 +51,33 @@
             <scope>provided</scope>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
+
+
+
+        <!-- test web -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
+            <groupId>com.aykj</groupId>
+            <artifactId>loglink-spring-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- test dubbo -->
+        <dependency>
+            <groupId>com.aykj</groupId>
+            <artifactId>loglink-dubbo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+
     </dependencies>
 
 </project>

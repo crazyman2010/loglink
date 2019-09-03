@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Configuration
 @WebFilter(urlPatterns = "/", filterName = "RequestIdFilter")
-public class RequestIdFilter implements Filter {
+public class LogWebRequestIdFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) {
         if (request instanceof HttpServletRequest) {
