@@ -1,0 +1,2 @@
+dubboProviderLogRequestIdFilter=com.aykj.loglink.dubbo.DubboProviderLogRequestIdFilter
+dubboConsumerLogRequestIdFilter=com.aykj.loglink.dubbo.DubboConsumerLogRequestIdFilter

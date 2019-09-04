@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created on 19-9-3.
  *
- * @author heyangya
+ * @author mo
  */
 @RestController
 public class FooController {

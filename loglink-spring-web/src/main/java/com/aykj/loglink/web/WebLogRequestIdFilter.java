@@ -1,5 +1,8 @@
-package com.aykj.loglink;
+package com.aykj.loglink.web;
 
+import com.aykj.loglink.Constants;
+import com.aykj.loglink.LogLinker;
+import com.aykj.loglink.RequestIdGenerator;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,11 +15,11 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Configuration
 @WebFilter(urlPatterns = "/", filterName = "RequestIdFilter")
-public class LogWebRequestIdFilter implements Filter {
+public class WebLogRequestIdFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) {
         if (request instanceof HttpServletRequest) {
-            String requestId = ((HttpServletRequest) request).getHeader("RequestId");
+            String requestId = ((HttpServletRequest) request).getHeader(Constants.getRequestIdKey());
             if (StringUtils.isEmpty(requestId)) {
                 // no requestId , generate one
                 requestId = RequestIdGenerator.nextId();
