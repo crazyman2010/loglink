@@ -11,9 +11,8 @@
     <modules>
         <module>loglink-core</module>
         <module>loglink-spring-web</module>
-        <module>example</module>
         <module>loglink-dubbo</module>
-        <module>loglink-rocketmq</module>
+        <module>example</module>
     </modules>
 
     <build>
